@@ -1,0 +1,14 @@
+.main-page {
+    width: 100%; /* Utilisez 100% ici, car nous contrôlons la largeur dans App.js */
+    margin: 20px auto; /* Centrer avec une marge en haut et en bas */
+    padding: 20px; /* Ajouter du padding autour du contenu */
+    background-color: #f8f9fa; /* Couleur de fond claire pour le contenu */
+    border-radius: 15px; /* Arrondir les bords */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+}
+
+.grid-container {
+    display: grid; /* Utiliser CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Crée des colonnes de taille variable */
+    gap: 15px; /* Espacement entre les blocs */
+}

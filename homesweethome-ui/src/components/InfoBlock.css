@@ -1,0 +1,44 @@
+/* src/components/InfoBlock.css */
+.info-block {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 15px; /* Espacement interne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre */
+    display: flex; /* Utiliser flexbox pour l'alignement */
+    align-items: center; /* Aligner verticalement au centre */
+    margin-bottom: 15px; /* Espacement entre les blocs */
+}
+
+.info-block.small {
+    grid-column: span 1; /* Occupe 1 colonne */
+}
+
+.info-block.medium {
+    grid-column: span 2; /* Occupe 2 colonnes */
+}
+
+.info-block.large {
+    grid-column: span 3; /* Occupe 3 colonnes */
+}
+
+.icon {
+    font-size: 30px; /* Taille de l'icône */
+    margin-right: 15px; /* Espacement à droite de l'icône */
+}
+
+.info {
+    flex-grow: 1; /* Permettre à l'info de prendre tout l'espace restant */
+}
+
+.title {
+    font-size: 18px; /* Taille de la police pour le titre */
+    margin: 0; /* Pas de marge */
+    color: #333; /* Couleur du titre */
+}
+
+.value {
+    font-size: 24px; /* Taille de la police pour la valeur */
+    font-weight: bold; /* Mettre la valeur en gras */
+    margin: 0; /* Pas de marge */
+    color: #007bff; /* Couleur de la valeur (bleu) */
+}

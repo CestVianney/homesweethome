@@ -1,0 +1,74 @@
+/* src/pages/GroceriesPage.css */
+.groceries-page {
+    width: 80%; /* Largeur de la page */
+    margin: 20px auto; /* Centrer la page avec un margin */
+    padding: 20px; /* Padding interne */
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    border-radius: 15px; /* Arrondir les bords */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour le contenu */
+}
+
+.add-item-form {
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    gap: 10px; /* Espacement entre les éléments */
+    margin-bottom: 20px; /* Espacement en bas de la barre d'ajout */
+}
+
+.add-item-form input {
+    flex-grow: 1; /* Permet à l'input de prendre l'espace restant */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ddd; /* Bordure autour de l'input */
+    border-radius: 5px; /* Bords arrondis */
+}
+
+.add-item-form button {
+    padding: 10px 15px; /* Espacement interne */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bords arrondis */
+    cursor: pointer; /* Curseur de pointeur */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.add-item-form button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+.groceries-table {
+    width: 100%; /* Prendre toute la largeur du conteneur */
+    border-collapse: collapse; /* Supprimer les espaces entre les cellules */
+}
+
+.groceries-table th,
+.groceries-table td {
+    border: 1px solid #ddd; /* Bordure autour des cellules */
+    padding: 8px; /* Espacement à l'intérieur des cellules */
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+.groceries-table th {
+    background-color: #007bff; /* Couleur de fond des en-têtes */
+    color: white; /* Couleur du texte des en-têtes */
+}
+
+.controls {
+    margin-bottom: 20px; /* Espacement en bas du conteneur de contrôle */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    justify-content: flex-end; /* Aligner à droite */
+}
+
+.controls button {
+    padding: 10px 15px; /* Espacement interne */
+    background-color: #dc3545; /* Couleur de fond pour le bouton de suppression */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bords arrondis */
+    cursor: pointer; /* Curseur de pointeur */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+    font-weight: bold; /* Mettre le texte en gras */
+}
+
+.controls button:hover {
+    background-color: #c82333; /* Couleur de fond au survol */
+}

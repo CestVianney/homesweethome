@@ -1,0 +1,23 @@
+.round-button {
+    background-color: #ffffff; /* Couleur de fond */
+    border: none;
+    border-radius: 50%; /* Rendre le bouton rond */
+    width: 50px; /* Largeur du bouton */
+    height: 50px; /* Hauteur du bouton */
+    cursor: pointer;
+    display: flex; /* Utiliser flexbox pour centrer l'image */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    margin-right: 8px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+.round-button img {
+    width: 80%; /* Taille de l'image à l'intérieur du bouton */
+    height: auto; /* Conserver le ratio d'aspect */
+}
+
+.round-button:hover {
+    background-color: rgba(172, 229, 255, 0.705); /* Changement de couleur au survol */
+}

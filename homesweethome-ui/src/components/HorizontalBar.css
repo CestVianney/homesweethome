@@ -1,0 +1,28 @@
+.horizontal-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8dadd; /* Couleur de fond */
+    color: rgb(24, 26, 26); /* Couleur du texte */
+    padding: 10px 20px;
+    border-radius: 15px; /* Arrondi des bords */
+    border-color: black;
+    margin: 20px auto; /* Centrer avec une marge en haut et en bas */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+}
+
+.time-display {
+    flex: 1; /* Prendre tout l'espace disponible pour centrer le texte */
+    text-align: center; /* Centrer le texte */
+    font-size: 1.5em;
+}
+
+.buttons {
+    display: flex; /* Utiliser flexbox pour aligner les boutons */
+    justify-content: flex-end; /* Aligner les boutons à droite */
+}
+
+.date-display {
+    font-weight: bold;
+}

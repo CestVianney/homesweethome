@@ -1,0 +1,30 @@
+/* src/components/TemperatureBlock.css */
+.temperature-block {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 10px; /* Espacement interne réduit */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre */
+    width: 300px; /* Largeur du bloc réduite */
+    height: auto; /* Hauteur automatique */
+}
+
+h2 {
+    margin: 0 0 5px; /* Espacement en bas réduit */
+    font-size: 20px; /* Taille du titre réduite */
+}
+
+h3 {
+    margin: 5px 0; /* Espacement en haut et en bas réduit */
+    font-size: 16px; /* Taille du sous-titre réduite */
+}
+
+p {
+    font-size: 24px; /* Taille de la température actuelle réduite */
+    font-weight: bold; /* Mettre la valeur en gras */
+    margin: 10px 0; /* Espacement en haut et en bas */
+}
+
+/* Style pour le graphique */
+.chartjs-size-monitor {
+    display: none !important; /* Masquer le moniteur de taille de graphique */
+}
