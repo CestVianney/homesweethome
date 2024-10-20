@@ -1,7 +1,5 @@
 .main-page {
     width: 100%; /* Utilisez 100% ici, car nous contrôlons la largeur dans App.js */
-    margin: 20px auto; /* Centrer avec une marge en haut et en bas */
-    padding: 20px; /* Ajouter du padding autour du contenu */
     border-radius: 15px; /* Arrondir les bords */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
 }
@@ -11,8 +9,8 @@
     grid-template-columns: 1fr 2fr; /* Deux colonnes, la deuxième est plus large */
     gap: 15px; /* Espacement entre les blocs */
     padding: 20px; /* Espacement interne du conteneur */
+    box-sizing: border-box; /* Inclure padding et bordures dans les dimensions */
 }
-
 
 .box {
     border: black 2px;

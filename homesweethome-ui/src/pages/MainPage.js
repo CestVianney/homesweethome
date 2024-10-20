@@ -3,6 +3,8 @@ import TemperatureBlock from "../components/TemperatureBlock";
 import Apartment3D from "../components/Apartment3D";
 import GridLayout from "react-grid-layout";
 import "./MainPage.css";
+import ScenarioBlock from "../components/ScenarioBlock";
+import WeatherBlock from "../components/WeatherBlock";
 
 const MainPage = () => {
     const currentTemperature = 22; // Température actuelle
@@ -13,12 +15,10 @@ const MainPage = () => {
     ]; // Températures des dernières 24 heures
 
     var layout = [
-        { i: "temperatureBlock", x: 0, y: 0, w: 4, h: 4 },
-        { i: "temperatureBlock2", x: 0, y: 0, w: 4, h: 4 },
-        { i: "temperatureBlock3", x: 0, y: 0, w: 4, h: 4 },
-        { i: "temperatureBlock4", x: 0, y: 0, w: 4, h: 4 },
-        { i: "temperatureBlock5", x: 0, y: 0, w: 4, h: 4 },
-        { i: "apartment3D", x: 3, y: 0, w: 4, h: 4, minH: 4, minW: 4}, 
+        { i: "temperatureBlock", x: 0, y: 0, w: 4, h: 4, minH: 4, minW: 4 },
+        { i: "scenarioBlock", x: 8, y: 0, w: 4, h: 4, minH: 4, minW: 4 },
+        { i: "apartment3D", x: 4, y: 0, w: 4, h: 4, minH: 4, minW: 4, static: true}, 
+        { i: "weatherBlock", x: 0, y: 4, w: 8, h: 4, minH:4, minW: 4}
     ];
 
     return (
@@ -33,20 +33,14 @@ const MainPage = () => {
                 <div key="temperatureBlock">
                     <TemperatureBlock currentTemp={currentTemperature} hourlyTemps={hourlyTemperatures} />
                 </div>
-                <div key="temperatureBlock2">
-                    <TemperatureBlock currentTemp={currentTemperature} hourlyTemps={hourlyTemperatures} />
-                </div>
-                <div key="temperatureBlock3">
-                    <TemperatureBlock currentTemp={currentTemperature} hourlyTemps={hourlyTemperatures} />
-                </div>
-                <div key="temperatureBlock4">
-                    <TemperatureBlock currentTemp={currentTemperature} hourlyTemps={hourlyTemperatures} />
-                </div>
-                <div key="temperatureBlock5">
-                    <TemperatureBlock currentTemp={currentTemperature} hourlyTemps={hourlyTemperatures} />
+                <div key="scenarioBlock">
+                    <ScenarioBlock />
                 </div>
                 <div key="apartment3D">
                     <Apartment3D />
+                </div>
+                <div key="weatherBlock">
+                    <WeatherBlock lat={49.495124} lon={0.105306} apiKey={'4b819bbf37d3707ebf1c71110b9f1786'} />
                 </div>
             </GridLayout>
         </div>

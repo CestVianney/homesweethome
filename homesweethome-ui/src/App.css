@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 80%; /* Largeur de 80% */
+  width: 1200px; /* Largeur de 80% */
   margin: 0 auto; /* Centrer horizontalement */
   display: flex;
   flex-direction: column; /* Alignement en colonne */
