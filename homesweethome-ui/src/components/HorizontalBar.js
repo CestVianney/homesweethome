@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./HorizontalBar.css"; // Importer le fichier CSS pour le style
+import "./HorizontalBar.css"; 
 import RoundButton from "./RoundButton";
 import CaddieLogo from "../assets/logo/caddie.png";
-import AgendaLogo from "../assets/logo/agenda.png";
 import HomeLogo from "../assets/logo/home.svg"
 import { Link } from "react-router-dom";
 
-const HorizontalBar = () => {
+const HorizontalBar = ({ blockVisibility, setBlockVisibility }) => {
   const [currentTime, setCurrentTime] = useState("");
   const [currentDate, setCurrentDate] = useState("");
 

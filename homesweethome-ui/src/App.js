@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react"
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HorizontalBar from "./components/HorizontalBar";
 import MainPage from "./pages/MainPage";
@@ -11,7 +11,11 @@ function App() {
       <div class="container">
         <HorizontalBar />
         <Routes>
-          <Route exact path="/" element={<MainPage />} />
+          <Route
+            exact
+            path="/"
+            element={<MainPage />}
+          />
           <Route path="/groceries" element={<GroceriesPage />} />
         </Routes>
       </div>

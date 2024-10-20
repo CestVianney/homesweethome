@@ -47,6 +47,11 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
         const currentWeatherData = await currentWeatherResponse.json();
         const forecastData = await forecastResponse.json();
 
+        console.log("curren---------------------------------------");
+        console.log(currentWeatherData);
+        console.log("forecast-------------------------------");
+        console.log(forecastData);
+
         setCurrentWeather(currentWeatherData);
         setForecast(forecastData);
 
@@ -77,6 +82,9 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
       case "scattered clouds":
         setBackgroundClass("scattered-clouds");
         break;
+      case "Clouds":
+        setBackgroundClass("scattered-clouds");
+        break;
       case "broken clouds":
         setBackgroundClass("broken-clouds");
         break;
@@ -89,7 +97,7 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
       case "shower rain":
         setBackgroundClass("shower-rain");
         break;
-      case "rain":
+      case "Rain":
         setBackgroundClass("rain");
         break;
       case "thunderstorm":
@@ -114,13 +122,15 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
         return "clear-sky";
       case "few clouds":
         return "few-clouds";
+      case "Clouds":
+        return "scattered-clouds";
       case "scattered clouds":
         return "scattered-clouds";
       case "broken clouds":
         return "broken-clouds";
       case "shower rain":
         return "shower-rain";
-      case "rain":
+      case "Rain":
         return "rain";
       case "light rain":
         return "light-rain";
@@ -146,7 +156,6 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
   // Extraction des données actuelles
   const { temp, humidity } = currentWeather.main;
   const windSpeed = currentWeather.wind.speed;
-  const weatherDescription = currentWeather.weather[0].description;
 
   // Extraction des prévisions (premier jour)
   const todayForecast = forecast.list.slice(0, 8); // Les 8 premières tranches horaires pour le jour
@@ -260,13 +269,13 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
           className={activeTab === 1 ? "active" : ""}
           onClick={() => setActiveTab(1)}
         >
-          <FaCircleArrowRight size={40} />
+          <p>24H</p>
         </button>
         <button
           className={activeTab === 2 ? "active" : ""}
           onClick={() => setActiveTab(2)}
         >
-          <GrSchedulePlay size={40} />
+          <p>4J</p>
         </button>
       </div>
 
@@ -309,9 +318,18 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
                     className={`forecast-item ${backgroundClass}`}
                   >
                     <p>{new Date(forecastItem.dt_txt).toLocaleDateString()}</p>
-                    <p><FaTemperatureHigh size={30} color="white" /> {forecastItem.main.temp}°C</p>
-                    <p><FaWind size={30} color="white" /> {forecastItem.wind.speed} m/s</p>
-                    <p><WiHumidity size={30} color="white" /> : {forecastItem.main.humidity}</p>
+                    <p>
+                      <FaTemperatureHigh size={30} color="white" />{" "}
+                      {forecastItem.main.temp}°C
+                    </p>
+                    <p>
+                      <FaWind size={30} color="white" />{" "}
+                      {forecastItem.wind.speed} m/s
+                    </p>
+                    <p>
+                      <WiHumidity size={30} color="white" /> :{" "}
+                      {forecastItem.main.humidity}
+                    </p>
                   </div>
                 );
               })}

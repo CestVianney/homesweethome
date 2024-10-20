@@ -37,10 +37,10 @@ const TemperatureBlock = ({ currentTemp, hourlyTemps }) => {
         <div
             className="temperature-block"
         >
-            <h2>Température Actuelle</h2>
-            <p>{currentTemp} °C</p>
+            <h2>Température Intérieure</h2>
             <h3>Température Moyenne: {averageTemp} °C</h3>
             <Line data={data} />
+            <p className="temp-temperature-block">{currentTemp} °C</p>
         </div>
     );
 };
