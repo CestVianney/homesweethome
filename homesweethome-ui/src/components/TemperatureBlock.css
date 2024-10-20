@@ -3,9 +3,10 @@
     background-color: #ffffff; /* Couleur de fond blanche */
     border-radius: 10px; /* Bords arrondis */
     padding: 10px; /* Espacement interne réduit */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre */
-    width: 300px; /* Largeur du bloc réduite */
-    height: auto; /* Hauteur automatique */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+    width:380px;
+    height:380px;
+    box-sizing: border-box; /* Inclure padding et bordures dans les dimensions */
 }
 
 h2 {

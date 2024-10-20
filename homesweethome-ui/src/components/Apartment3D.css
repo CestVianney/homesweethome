@@ -1,0 +1,9 @@
+.canvas-container {
+    width: 380px;
+    height: 380px;    
+    background: #cac7c7; 
+    border: 1px solid #ccc; 
+    position: relative; 
+    margin: auto; 
+    border-radius: 10px; /* Bords arrondis */
+}
