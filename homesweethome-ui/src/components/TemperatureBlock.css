@@ -1,36 +1,26 @@
-.temperature-block {
-    background-color: #ffffff; 
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
-    width:380px;
-    height:380px;
-    box-sizing: border-box; 
-}
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-h2 {
-    text-align: center;
-    margin: 0 0 5px; 
-    font-size: 20px; 
-}
-
-h3 {
-    margin: 5px 0; 
-    font-size: 16px; 
-}
-
-p {
-    font-size: 24px; 
-    font-weight: bold; 
-    margin: 10px 0; 
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
 }
 
 .chartjs-size-monitor {
-    display: none !important; 
+    display: none !important;
 }
 
 .temp-temperature-block {
-    font-size: 40px;
+    font-size: 48px;
+    font-weight: bold;
     text-align: center;
-    padding: 30px;
+    color: #ffcd58;
+    padding: 5px 20px 5px 20px;
+    background: #2b2b3d;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.1), 
+                inset -2px -2px 5px rgba(0, 0, 0, 0.6),
+                0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
 }

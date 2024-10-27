@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./HorizontalBar.css"; 
+import "./HorizontalBar.css";
 import RoundButton from "./RoundButton";
 import CaddieLogo from "../assets/logo/caddie.png";
-import HomeLogo from "../assets/logo/home.svg"
 import { Link } from "react-router-dom";
+import Fab from "@mui/material/Fab";
+import HomeIcon from "@mui/icons-material/Home";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const HorizontalBar = ({ blockVisibility, setBlockVisibility }) => {
   const [currentTime, setCurrentTime] = useState("");
@@ -12,17 +14,21 @@ const HorizontalBar = ({ blockVisibility, setBlockVisibility }) => {
   useEffect(() => {
     const updateTimeAndDate = () => {
       const now = new Date();
-      setCurrentTime(now.toLocaleTimeString("fr-FR", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      }));
-      setCurrentDate(now.toLocaleDateString("fr-FR", {
-        weekday: "long", // Nom du jour
-        year: "numeric", // Année
-        month: "long", // Mois
-        day: "numeric" // Jour
-      }));
+      setCurrentTime(
+        now.toLocaleTimeString("fr-FR", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        })
+      );
+      setCurrentDate(
+        now.toLocaleDateString("fr-FR", {
+          weekday: "long", // Nom du jour
+          year: "numeric", // Année
+          month: "long", // Mois
+          day: "numeric", // Jour
+        })
+      );
     };
 
     updateTimeAndDate(); // Mettre à jour l'heure et la date au démarrage
@@ -33,19 +39,20 @@ const HorizontalBar = ({ blockVisibility, setBlockVisibility }) => {
 
   return (
     <div className="horizontal-bar">
-      <div className="home">
-        <Link to="/">
-          <RoundButton image={HomeLogo} altText={"Home"} />
-        </Link>
-      </div>
+      <Link to="/">
+        <Fab color="white" aria-label="home">
+          <HomeIcon />
+        </Fab>
+      </Link>
+
       <div className="tima-and-date">
-      <div className="date-display">{currentDate}</div>
-      <div className="time-display">{currentTime}</div>
+        <div className="date-display"><span className="special-text">{currentDate}</span></div>
+        <div className="time-display"><span className="secondary-text">{currentTime}</span></div>
       </div>
       <div className="buttons">
-        <Link to="/groceries">
-          <RoundButton image={CaddieLogo} altText={"Shop"} />
-        </Link>
+        <Fab color="white" aria-label="courses">
+          <ShoppingCartIcon />
+        </Fab>
       </div>
     </div>
   );

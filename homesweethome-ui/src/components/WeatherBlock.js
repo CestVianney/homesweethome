@@ -216,7 +216,7 @@ const WeatherBlock = ({ lat, lon, apiKey }) => {
       y: {
         type: "linear",
         position: "left",
-        beginAtZero: false,
+        beginAtZero: true,
         ticks: {
           color: "black",
         },

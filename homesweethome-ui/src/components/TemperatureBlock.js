@@ -1,48 +1,85 @@
 import React from "react";
-import { Line } from "react-chartjs-2"; // Assurez-vous d'avoir installé react-chartjs-2
-import { Chart, registerables } from "chart.js"; // Importer Chart et registerables
-import "./TemperatureBlock.css"; // Importer le fichier CSS pour le style
+import { Line } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
+import "./TemperatureBlock.css";
+import { FaTemperatureHigh } from "react-icons/fa6";
 
-// Enregistrer les composants nécessaires de Chart.js
 Chart.register(...registerables);
 
 const TemperatureBlock = ({ currentTemp, hourlyTemps }) => {
-    // Calculer la température moyenne
-    const averageTemp = (
-        hourlyTemps.reduce((acc, temp) => acc + temp, 0) / hourlyTemps.length
-    ).toFixed(2);
+  const averageTemp = (
+    hourlyTemps.reduce((acc, temp) => acc + temp, 0) / hourlyTemps.length
+  ).toFixed(2);
 
-    // Préparer les données pour le graphique
-    const currentHour = new Date().getHours();
-    const labels = [];
-    for (let i = 0; i < 24; i++) {
-        const hour = (currentHour - i + 24) % 24; // Récupérer les heures précédentes
-        labels.push(`${hour}:00`);
-    }
+  const currentHour = new Date().getHours();
+  const labels = [];
+  for (let i = 0; i < 24; i++) {
+    const hour = (currentHour - i + 24) % 24;
+    labels.push(`${hour}:00`);
+  }
 
-    const data = {
-        labels: labels.reverse(), // Inverser les étiquettes pour afficher de 18h à 18h
-        datasets: [
-            {
-                label: "Température sur 24h",
-                data: hourlyTemps.reverse(), // Inverser les données pour correspondre aux étiquettes
-                fill: false,
-                borderColor: "rgba(75, 192, 192, 1)",
-                tension: 0.1,
-            },
-        ],
-    };
+  const data = {
+    labels: labels.reverse(),
+    datasets: [
+      {
+        label: "Température",
+        data: hourlyTemps.reverse(),
+        fill: true,
+        borderColor: "#ffcd58",
+        backgroundColor: "rgba(255, 205, 88, 0.1)",
+        pointBorderColor: "#ffcd58",
+        pointBackgroundColor: "#2b2b3d",
+        pointRadius: 5,
+        borderWidth: 2,
+        tension: 0.5,
+      },
+    ],
+  };
 
-    return (
-        <div
-            className="temperature-block"
-        >
-            <h2>Température Intérieure</h2>
-            <h3>Température Moyenne: {averageTemp} °C</h3>
-            <Line data={data} />
-            <p className="temp-temperature-block">{currentTemp} °C</p>
+  const options = {
+    plugins: {
+      legend: { display: false },
+    },
+    scales: {
+      x: {
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#a3a3bf",
+        },
+      },
+      y: {
+        grid: {
+          color: "rgba(255, 255, 255, 0.1)",
+        },
+        ticks: {
+          color: "#a3a3bf",
+          beginAtZero: true,
+        },
+      },
+    },
+    maintainAspectRatio: false,
+  };
+
+  return (
+    <div className="block">
+      <div className="block-top">
+        <div className="block-top-illu">
+          <FaTemperatureHigh size={50} />
         </div>
-    );
+        <div className="block-top-title">
+          <h2>Température Intérieure</h2>
+          <h3>Température actuelle : <span className="special-text">{currentTemp} °C</span></h3>
+        </div>
+      </div>
+      <div className="block-central">
+        <div className="chart-container">
+          <Line data={data} options={options} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default TemperatureBlock;

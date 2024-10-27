@@ -20,6 +20,7 @@
 
 .layout {
     background-color: none;
+    pointer-events: none;
 }
 
 .react-grid-layout {

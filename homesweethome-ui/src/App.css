@@ -1,13 +1,81 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif; /* Choisissez une police de votre choix */
-  background-color: #352c2c; /* Couleur d'arrière-plan */
+  font-family: Arial, sans-serif; 
 }
 
 .container {
-  width: 1200px; /* Largeur de 80% */
-  margin: 0 auto; /* Centrer horizontalement */
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Alignement en colonne */
+  flex-direction: column; 
+}
+
+.block {
+  background-color: #2b2b3de1;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  width: 380px;
+  height: 380px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-top {
+  display: flex;
+  align-items: center; /* Aligne verticalement le contenu */
+  justify-content: space-between; /* Espace entre le logo et le titre */
+  flex-direction: row;
+  height: 20%; /* Espace réservé pour la partie supérieure */
+}
+
+.block-top-illu {
+  width: 15%; /* Largeur fixe pour le logo */
+  display: flex; /* Ajout de flex pour centrer le logo */
+  justify-content: center; /* Centre horizontalement */
+  color:#ffcd58;
+  pointer-events: fill;
+
+}
+
+.block-top-title {
+  width: 80%; /* Ajuste la largeur pour donner plus d'espace au titre */
+  text-align: left; /* Aligne le texte à gauche */
+}
+
+.block-top h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  text-align: left; /* Aligne le titre à gauche */
+  color: #ffcd58; /* Couleur plus vive */
+}
+
+.special-text {
+  color:#ffcd58;
+}
+
+.secondary-text {
+  color:#a3a3bf;
+}
+
+.block-top h3 {
+  font-size: 16px;
+  margin: 5px 0 15px;
+  color: #a3a3bf;
+}
+
+.button-container {
+  display: flex; /* Utilise flexbox pour l'agencement des boutons */
+  justify-content: space-around; /* Équilibre l'espace autour des boutons */
+  margin-top: 15px; /* Ajoute de l'espace entre le titre et les boutons */
+}
+
+.block-central {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  flex-grow: 1; /* Prend tout l'espace restant */
 }
