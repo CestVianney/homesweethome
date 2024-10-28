@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { IoHome } from "react-icons/io5";
 import "./Apartment3D.css";
 
 function ApartmentModel() {
@@ -11,8 +12,18 @@ function ApartmentModel() {
 const Apartment3D = () => {
     return (
         <div
-            className="canvas-container"
+            className="block"
         >
+            <div className="block-top">
+                <div className="block-top-illu">
+                <IoHome size={50}/>
+                </div>
+                <div className="block-top-title">
+                    <h2>Chez Vianney</h2>
+                    <h3>Les frites sont gratuites</h3>
+                </div>
+            </div>
+            <div className="block-central">
             <Canvas camera={{ position: [10.56, 8.30, 3.68], fov: 75 }}>
                 <ambientLight intensity={0.5} />
                 <pointLight position={[5, 5, 5]} intensity={1} />
@@ -22,6 +33,7 @@ const Apartment3D = () => {
                 </Suspense>
                 <OrbitControls />
             </Canvas>
+            </div>
         </div>
     );
 };

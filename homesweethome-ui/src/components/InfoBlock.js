@@ -1,5 +1,5 @@
 import React from "react";
-import "./InfoBlock.css"; // Importer le fichier CSS pour le style
+import "./InfoBlock.css";
 
 const InfoBlock = ({ title, value, unit, icon, size }) => {
     return (

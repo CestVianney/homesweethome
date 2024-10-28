@@ -7,10 +7,6 @@ import { FaTemperatureHigh } from "react-icons/fa6";
 Chart.register(...registerables);
 
 const TemperatureBlock = ({ currentTemp, hourlyTemps }) => {
-  const averageTemp = (
-    hourlyTemps.reduce((acc, temp) => acc + temp, 0) / hourlyTemps.length
-  ).toFixed(2);
-
   const currentHour = new Date().getHours();
   const labels = [];
   for (let i = 0; i < 24; i++) {

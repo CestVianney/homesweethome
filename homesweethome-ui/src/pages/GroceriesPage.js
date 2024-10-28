@@ -1,17 +1,16 @@
-// src/pages/GroceriesPage.js
 import React, { useState } from "react";
-import "./GroceriesPage.css"; // Importer le fichier CSS pour le style
+import "./GroceriesPage.css"; 
 
 const GroceriesPage = () => {
   const [groceries, setGroceries] = useState([]);
-  const [inputValue, setInputValue] = useState(""); // État pour le champ de saisie
-  const suggestions = ["Pommes", "Bananes", "Carottes", "Tomates", "Pain"]; // Liste des suggestions
+  const [inputValue, setInputValue] = useState("");
+  const suggestions = ["Pommes", "Bananes", "Carottes", "Tomates", "Pain"]; 
 
   const addItem = (e) => {
-    e.preventDefault(); // Empêcher le rechargement de la page
+    e.preventDefault(); 
     if (inputValue) {
-      setGroceries([...groceries, inputValue]); // Ajouter l'article à la liste
-      setInputValue(""); // Réinitialiser le champ de saisie
+      setGroceries([...groceries, inputValue]); 
+      setInputValue(""); 
     }
   };
 
@@ -33,7 +32,7 @@ const GroceriesPage = () => {
         <input
           type="text"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)} // Mettre à jour l'état de l'entrée
+          onChange={(e) => setInputValue(e.target.value)}
           placeholder="Nom de l'article"
           required
         />
