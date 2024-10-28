@@ -12,11 +12,6 @@ import BgSnow from "./components/backgrounds/BgSnow";
 
 
 function App() {
-  const [currentVideoId, setCurrentVideoId] = useState("");
-  const handleSelectVideo = (videoId) => {
-    setCurrentVideoId(videoId); // Met à jour l'ID de la vidéo en cours
-  };
-
   return (
       <Router>
         <div className="container">
