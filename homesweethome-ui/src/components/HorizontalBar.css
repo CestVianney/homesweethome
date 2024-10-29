@@ -1,6 +1,5 @@
 .horizontal-bar {
     width: 1220px;
-    width: 1220px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +12,7 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
     box-sizing: border-box; 
     z-index: 10;
+    position: relative; /* Ajoute le positionnement relatif pour éviter les superpositions */
 }
 
 .time-display {
@@ -29,3 +29,37 @@
 .date-display {
     font-weight: bold;
 }
+
+.drawer {
+    background-color: #2b2b3d80; /* Fond semi-transparent */
+    width: 250px; /* Largeur du Drawer */
+    padding: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le contenu verticalement */
+    height: 60%; /* Hauteur ajustée du Drawer pour qu’il apparaisse au centre */
+    position: fixed; /* Permet de le fixer au centre de l'écran */
+    top: 20%; /* Ajuste la position verticale */
+}
+  
+  .drawer .MuiListItem-root {
+    border-radius: 10px; /* Coins arrondis */
+    padding: 10px;
+    margin-bottom: 8px;
+    color: #ffcd58; /* Couleur du texte */
+    font-weight: bold;
+  }
+  
+  .drawer .MuiListItem-root:hover {
+    background-color: #3c3c5c; /* Effet au survol */
+    color: #ffcd58;
+  }
+  
+  .drawer-divider {
+    background-color: #a3a3bf;
+    margin: 10px 0;
+  }
+  

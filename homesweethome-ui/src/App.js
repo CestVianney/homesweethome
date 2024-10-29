@@ -9,7 +9,7 @@ import GroceriesPage from "./pages/GroceriesPage";
 // import BgGradientWaves from "./components/backgrounds/BgGradientWaves";
 import BgSnow from "./components/backgrounds/BgSnow";
 // import BgMoon from "./components/backgrounds/BgMoon";
-
+ 
 
 function App() {
   return (
