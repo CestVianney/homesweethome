@@ -10,7 +10,8 @@ const CryptoBlock = () => {
   useEffect(() => {
     const fetchTokenData = async () => {
       try {
-        const response = await axios.get(
+        const response = 
+        await axios.get(
           `https://api.coingecko.com/api/v3/coins/markets`,
           {
             params: {
@@ -50,7 +51,7 @@ const CryptoBlock = () => {
         {tokens.map((token) => (
           <div key={token.id} className="grid-item">
             <img src={token.image} alt={token.name} className="token-logo" />
-            <h4 className="token-name special-text">{token.name}</h4>
+            <h4 className="token-name special-text">{token.market_cap_rank} - {token.name}</h4>
             <p className="secondary-text">Prix actuel: ${token.current_price}</p>
             <p className="special-text">
               Evolution 24h:{" "}

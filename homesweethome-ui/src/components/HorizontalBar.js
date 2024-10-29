@@ -60,14 +60,29 @@ const HorizontalBar = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        <ListItem button component={Link} to="/groceries">
-          <ListItemText primary="Courses" />
+        <ListItem button component={Link} to="/">
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button component={Link} to="/musique">
+          <ListItemText primary="Musique" />
         </ListItem>
       </List>
       <Divider className="drawer-divider" />
       <List>
-        <ListItem button component={Link} to="/page4">
-          <ListItemText primary="Page 4" />
+        <ListItem button component={Link} to="/plan">
+          <ListItemText primary="Plan" />
+        </ListItem>
+        <ListItem button component={Link} to="/inventaire">
+          <ListItemText primary="Inventaire" />
+        </ListItem>
+      </List>
+      <Divider className="drawer-divider" />
+      <List>
+        <ListItem button component={Link} to="/groceries">
+          <ListItemText primary="Courses" />
+        </ListItem>
+        <ListItem button component={Link} to="/notes">
+          <ListItemText primary="Notes" />
         </ListItem>
       </List>
     </div>
