@@ -63,9 +63,6 @@ const HorizontalBar = () => {
         <ListItem button component={Link} to="/">
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button component={Link} to="/musique">
-          <ListItemText primary="Musique" />
-        </ListItem>
       </List>
       <Divider className="drawer-divider" />
       <List>
